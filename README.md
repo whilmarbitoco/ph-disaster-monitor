@@ -20,7 +20,7 @@ or JSON.
 
 ```bash
 # Clone and enter the repo
-git clone https://github.com/youruser/ph-disaster-monitor.git
+git clone https://github.com/whilmarbitoco/ph-disaster-monitor.git
 cd ph-disaster-monitor
 
 # Run with defaults (Philippines-wide, text output)

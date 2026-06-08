@@ -8,7 +8,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/youruser/ph-disaster-monitor.git
+git clone https://github.com/whilmarbitoco/ph-disaster-monitor.git
 cd ph-disaster-monitor
 
 # Optional: create a venv
