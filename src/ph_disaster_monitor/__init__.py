@@ -100,7 +100,8 @@ def fetch_json(url: str, timeout: int = 20) -> Optional[dict]:
             "User-Agent": f"ph-disaster-monitor/{__version__}"
         })
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            return json.loads(r.read())
+            result: dict = json.loads(r.read())
+            return result
     except Exception:
         return None
 
@@ -120,7 +121,8 @@ def fetch_text(url: str, timeout: int = 20) -> Optional[str]:
             "User-Agent": f"ph-disaster-monitor/{__version__}"
         })
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.read().decode("utf-8", errors="replace")
+            result: str = r.read().decode("utf-8", errors="replace")
+            return result
     except Exception:
         return None
 
