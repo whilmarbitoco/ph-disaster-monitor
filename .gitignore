@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+*.state.json
+disaster_state.json
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+uv.lock
