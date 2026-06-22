@@ -49,38 +49,28 @@ python -m ph_disaster_monitor --json
 
 ## 🤖 AI Agent Installation
 
-If you're an AI assistant helping a user install this tool, follow these steps:
+Copy and paste this prompt to any AI assistant to install, set up, and verify the tool:
 
-### 1. Clone and Verify
-
-```bash
-git clone https://github.com/whilmarbitoco/ph-disaster-monitor.git /opt/ph-disaster-monitor
-cd /opt/ph-disaster-monitor
-python3 -m ph_disaster_monitor --dry-run
 ```
+Install and set up the Philippines Disaster Monitor tool:
 
-### 2. Set Up Cron (if requested)
+1. Clone the repo:
+   git clone https://github.com/whilmarbitoco/ph-disaster-monitor.git /opt/ph-disaster-monitor
 
-```bash
-# Add to user's crontab — runs every 5 minutes, silent when no events
-(crontab -l 2>/dev/null; echo "*/5 * * * * cd /opt/ph-disaster-monitor && python3 -m ph_disaster_monitor 2>/dev/null") | crontab -
+2. Verify it works (no dependencies needed — pure Python 3.11+ stdlib):
+   cd /opt/ph-disaster-monitor && python3 -m ph_disaster_monitor --dry-run
+
+3. Set up cron to check for disasters every 5 minutes:
+   (crontab -l 2>/dev/null; echo "*/5 * * * * cd /opt/ph-disaster-monitor && python3 -m ph_disaster_monitor 2>/dev/null") | crontab -
+
+4. Verify the cron job is installed:
+   crontab -l | grep ph_disaster_monitor
+
+5. Run a live test:
+   python3 -m ph_disaster_monitor --region philippines
+
+Notes: No pip install needed. No config files required. Exit code 0 whether or not events are found. State file is created automatically. Region presets: philippines (default), luzon, visayas, mindanao, davao. Output modes: text (default) or --json.
 ```
-
-### 3. Verify It Works
-
-```bash
-# Should output formatted alerts or exit silently (no errors)
-python3 -m ph_disaster_monitor --region philippines
-```
-
-### Key Notes for AI Agents
-
-- **No dependencies to install** — pure Python 3.11+ stdlib, no `pip install` needed
-- **No config files required** — works out of the box with defaults
-- **State file** is created automatically — don't worry about missing state on first run
-- **Exit code 0** whether or not events are found — safe for cron piping
-- **Region presets**: `philippines` (default), `luzon`, `visayas`, `mindanao`, `davao`
-- **Output modes**: text (default) or `--json` for programmatic use
 
 ## 📊 Data Sources
 
